@@ -1,11 +1,16 @@
-node {  
-    stage('Build') { 
-        // 
+pipeline{
+    agent {
+        label "testLabel"
+        customWorkspace "${env.JOB_NAME}"
     }
-    stage('Test') { 
-        // 
-    }
-    stage('Deploy') { 
-        // 
+    stages {
+        stage('utility tool method') {
+            steps{
+                script {
+                    def files = findFiles(glob: '**/*.log')
+                    echo files[0].name
+                }
+            }
+        }
     }
 }
