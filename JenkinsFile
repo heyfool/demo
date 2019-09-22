@@ -1,7 +1,6 @@
 pipeline{
     agent {
         label 'testLabel'
-        customWorkspace "${env.JOB_NAME}"
     }
     stages {
         stage('utility tool method') {
