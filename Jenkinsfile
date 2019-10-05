@@ -10,6 +10,9 @@ pipeline{
     agent {
         label 'testNode1'
     }
+    options {
+        skipDefaultCheckout()
+    }
     stages {
         stage('read config') {
             steps {
