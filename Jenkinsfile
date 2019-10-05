@@ -2,14 +2,14 @@ pipeline{
     agent {
         label 'testNode1'
     }
-    options {
-        skipDefaultCheckout()
-    }
+    // options {
+    //     skipDefaultCheckout()
+    // }
     stages {
         stage('read config') {
             steps {
                 script {
-                    config = readYaml file: env.WORKSPACE + '/config.yaml'
+                    config = readYaml file: env.WORKSPACE + '/demo/config.yaml'
                     echo config
                 }
             }
