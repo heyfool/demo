@@ -17,7 +17,7 @@ pipeline{
         }
         stage('test') {
             steps{
-                echo config
+                echo 'config'
             }
         }
     }
