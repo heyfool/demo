@@ -4,23 +4,22 @@ def readYaml(yamlFile) {
     result.each{
         println(it.key + "=" + it.value)
     }
+    return result
 }
 pipeline{
     agent {
-        docker {
-            label 'master'
-            images 'centos'
-        }
+        label 'testNode1'
     }
     stages {
         stage('read config') {
             steps {
-                readYaml('config.yaml')
+                config = readYaml('config.yaml')
+                echo config
             }
         }
         stage('test') {
             steps{
-                echo 'testing'
+                echo config
             }
         }
     }
