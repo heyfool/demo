@@ -8,10 +8,10 @@ pipeline{
     stages {
         stage('read config') {
             steps {
-                // script {
-                //     config = readYaml file: env.WORKSPACE + '/demo/config.yaml'
-                //     echo config
-                // }
+                script {
+                    config = readYaml file: env.WORKSPACE + '/pipeline_config.yml'
+                    echo config
+                }
                 sh "ls ${env.WORKSPACE}"
             }
         }
