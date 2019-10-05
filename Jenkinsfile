@@ -2,9 +2,9 @@ pipeline{
     agent {
         label 'testNode1'
     }
-    options {
-        skipDefaultCheckout()
-    }
+    // options {
+    //     skipDefaultCheckout()
+    // }
     stages {
         stage('read config') {
             steps {
