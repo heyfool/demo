@@ -13,8 +13,7 @@ pipeline{
     stages {
         stage('read config') {
             steps {
-                config = ""
-                config = readYaml('config.yaml')
+                def config = readYaml('config.yaml')
                 echo config
             }
         }
